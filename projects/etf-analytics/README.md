@@ -26,6 +26,8 @@ This project aims to develop a machine learning application that assists in sele
 * https://github.com/leoncvlt/etf4u
 * https://github.com/letsgoexploring/economic-data
 
+The data is used for personal and educational purpose only. The intention of this project is to use data science methods to analyze the ETF market and create prediction models for non-commercial use.
+
 ### Data Transformations + EDA
 
 ### Modeling
