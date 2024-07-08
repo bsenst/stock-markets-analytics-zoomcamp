@@ -1,21 +1,17 @@
+import os
 import streamlit as st
 import pandas as pd
 from streamlit_timeline import timeline
 
 st.set_page_config(layout="wide")
 
-# Sample data
-data = {
-    'Symbol': ['SPY', 'IVV', 'VOO', 'VTI', 'QQQ', 'BITW', 'MAGX', 'ULTY', 'USDX', 'MAGQ'],
-    'Inception': [
-        'Jan 22, 1993', 'May 15, 2000', 'Sep 07, 2010', 'May 24, 2001', 
-        'Mar 10, 1999', 'Nov 22, 2017', 'Feb 29, 2024', 'Feb 29, 2024', 
-        'Feb 29, 2024', 'Feb 29, 2024'
-    ]
-}
+os.environ['KAGGLE_USERNAME'] = st.secrets["kaggle_username"]
+os.environ['KAGGLE_KEY'] = st.secrets["kaggle_key"]
 
-# Convert data to DataFrame
-df = pd.DataFrame(data)
+from kaggle import api # import the already authenticated API client
+
+api.dataset_download_files(f'{st.secrets["kaggle_username"]}/etfdb-overview', path='data', unzip=True)
+df = pd.read_csv("data/etfdb.csv", index_col=0)
 
 # Convert 'Inception' column to datetime
 df['Inception'] = pd.to_datetime(df['Inception'])
@@ -39,7 +35,7 @@ timeline_data = {
 }
 
 # Create Streamlit app
-st.title('ETF Inception Dates Timeline')
+# st.title('ETF Inception Dates Timeline')
 
 # Display the timeline
 timeline(timeline_data)
