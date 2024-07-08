@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 from streamlit_timeline import timeline
 
+st.set_page_config(layout="wide")
+
 # Sample data
 data = {
     'Symbol': ['SPY', 'IVV', 'VOO', 'VTI', 'QQQ', 'BITW', 'MAGX', 'ULTY', 'USDX', 'MAGQ'],
