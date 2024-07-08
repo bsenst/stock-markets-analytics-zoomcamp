@@ -1,41 +1,25 @@
 import os
 import streamlit as st
 import pandas as pd
-from streamlit_timeline import timeline
 
 st.set_page_config(layout="wide")
 
-os.environ['KAGGLE_USERNAME'] = st.secrets["kaggle_username"]
-os.environ['KAGGLE_KEY'] = st.secrets["kaggle_key"]
+# os.environ['KAGGLE_USERNAME'] = st.secrets["kaggle_username"]
+# os.environ['KAGGLE_KEY'] = st.secrets["kaggle_key"]
 
-from kaggle import api # import the already authenticated API client
+# from kaggle import api # import the already authenticated API client
 
-api.dataset_download_files(f'{st.secrets["kaggle_username"]}/etfdb-overview', path='data', unzip=True)
-df = pd.read_csv("data/etfdb.csv", index_col=0)
+# api.dataset_download_files(f'{st.secrets["kaggle_username"]}/etfdb-overview', path='data', unzip=True)
 
-# Convert 'Inception' column to datetime
-df['Inception'] = pd.to_datetime(df['Inception'])
+# df = pd.read_csv("data/etfdb.csv", index_col=0)
 
-# Sort by 'Inception' date
-df = df.sort_values(by='Inception')
+st.title("ETF Analytics")
 
-# Prepare timeline data
-events = []
-for i, row in df.iterrows():
-    events.append({
-        'start_date': {'year': row['Inception'].year, 'month': row['Inception'].month, 'day': row['Inception'].day},
-        'text': {'headline': row['Symbol'], 'text': f"Inception Date: {row['Inception'].strftime('%b %d, %Y')}"}
-    })
+from pathlib import Path
 
-timeline_data = {
-    'title': {
-        'text': {'headline': 'ETF Inception Dates'}
-    },
-    'events': events
-}
+def read_markdown_file(markdown_file):
+    return Path(markdown_file).read_text()
 
-# Create Streamlit app
-# st.title('ETF Inception Dates Timeline')
+intro_markdown = read_markdown_file("README.md")
 
-# Display the timeline
-timeline(timeline_data)
+st.markdown(intro_markdown, unsafe_allow_html=True)
