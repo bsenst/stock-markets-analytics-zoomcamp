@@ -1,4 +1,3 @@
-
 ### Introduction to Trading ETFs
 
 Exchange-Traded Funds (ETFs) have revolutionized the investment landscape, offering a versatile and cost-effective means for investors to diversify their portfolios. ETFs are investment funds that are traded on stock exchanges, much like individual stocks. They typically aim to replicate the performance of a specific index, commodity, or basket of assets, providing exposure to a wide range of markets and sectors.
