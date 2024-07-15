@@ -30,9 +30,15 @@ The data is used for personal and educational purpose only. The intention of thi
 
 ### Data Transformations + EDA
 
+[etf-analytics/notebooks/etf-analytics-july.ipynb](https://github.com/bsenst/stock-markets-analytics-zoomcamp/blob/main/projects/etf-analytics/notebooks/etf-analytics-july.ipynb)
+
 ### Modeling
 
+[etf-analytics/notebooks/etf-model-training-july.ipynb](https://github.com/bsenst/stock-markets-analytics-zoomcamp/blob/main/projects/etf-analytics/notebooks/etf-model-training-july.ipynb)
+
 ### Trading Simulation
+
+[etf-analytics/notebooks/etf-trading-simulation-july.ipynb](https://github.com/bsenst/stock-markets-analytics-zoomcamp/blob/main/projects/etf-analytics/notebooks/etf-trading-simulation-july.ipynb)
 
 ### Automation 
 
