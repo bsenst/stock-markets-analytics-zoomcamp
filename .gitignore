@@ -1,0 +1,63 @@
+# Data files
+*.parquet
+*.csv
+*.feather
+*.h5
+*.hdf5
+*.pickle
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Large data directories
+data/
+datasets/
+raw_data/
+processed_data/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+*.ipynb_output/
+.ipynb
+
+# Model files
+*.model
+*.weights
+*.onnx
+*.pt
+*.pth
+*.bin
+
+# Specific to this project
+cohorts/*/data.parquet
+cohorts/*/*.parquet
+projects/*/data/
+projects/*/*.parquet
